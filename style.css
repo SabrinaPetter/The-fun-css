@@ -1,0 +1,98 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --body-bg: hsl(0%, 0%, 13%);
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.wrapper {
+  max-width: 50rem;
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+.site-title {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.25rem;
+}
+
+section {
+  padding-block: 5rem;
+}
+
+.diagonal {
+  --skew-angle: -5deg;
+  position: relative;
+  isolation: isolate;
+}
+
+.diagonal::after {
+  content: "";
+  position: absolute;
+  inset: 0; /*sets the left, right, top and bottom of position absolute */
+  transform: skewY(var(--skew-angle));
+  z-index: -1;
+  background-image: linear-gradient(45deg, #12c2e9, #c471ed, #f64f59);
+}
+
+.spikes {
+  position: relative;
+  background: linear-gradient(to right, #fdc830, #f37335);
+  color: black;
+  --spike-color: rgb(255, 255, 255);
+  --spike-width: 50px;
+  --spike-height: 10px;
+}
+
+.spikes::before,
+.spikes::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: var(--spike-height);
+  background: var(--spike-color);
+  -webkit-mask-image: url("assets/triangle.svg");
+  mask-image: url("assets/triangle.svg");
+  -webkit-mask-size: var(--spike-width) var(--spike-height);
+  mask-size: var(--spike-width) var(--spike-height);
+}
+
+.spikes::before {
+  top: 0;
+}
+
+.spikes::after {
+  bottom: 0;
+  transform: rotate(0.5turn);
+}
+
+.wavy {
+  /* mas made with https://css-generators.com/wavy-shapes/*/
+  background: linear-gradient(#00f260, #0575e6);
+
+  --mask: radial-gradient(55.9px at 50% 75px, #000 99%, #0000 101%)
+      calc(50% - 50px) 0/100px 51% repeat-x,
+    radial-gradient(55.9px at 50% -50px, #0000 99%, #000 101%) 50% 25px/100px
+      calc(51% - 25px) repeat-x,
+    radial-gradient(55.9px at 50% calc(100% - 75px), #000 99%, #0000 101%)
+      calc(50% - 50px) 100%/100px 51% repeat-x,
+    radial-gradient(55.9px at 50% calc(100% + 50px), #0000 99%, #000 101%) 50%
+      calc(100% - 25px) / 100px calc(51% - 25px) repeat-x;
+  -webkit-mask: var(--mask);
+  mask: var(--mask);
+}
