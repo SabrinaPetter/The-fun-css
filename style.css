@@ -99,7 +99,6 @@ section {
   mask: var(--mask);
 }
 
-
 h1 {
   font-size: 4rem;
 }
@@ -107,6 +106,10 @@ p {
   font-size: 1.5rem;
 }
 body {
+  margin: 0;
+  font-family: "Prompt", sans-serif;
+  color: white;
+  background: #202731;
   overflow-x: hidden;
 }
 
