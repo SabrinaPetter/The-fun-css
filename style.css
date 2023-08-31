@@ -105,10 +105,6 @@ p {
   font-size: 1.5rem;
 }
 body {
-  margin: 0;
-  font-family: "Prompt", sans-serif;
-  color: white;
-  background: #202731;
   overflow-x: hidden;
 }
 
