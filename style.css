@@ -218,10 +218,10 @@ section {
 }
 
 .layer1 {
-  background-image: url("./layer1.svg");
+  background-image: url("assets/layer1.svg");
 }
 .layer2 {
-  background-image: url("./layer2.svg");
+  background-image: url("assets/layer2.svg");
 }
 
 .flip {
@@ -242,5 +242,5 @@ section {
 
 .blobs {
   width: 100%;
-  background: url("./blobs.svg") no-repeat bottom / cover;
+  background: url("assets/blobs.svg") no-repeat bottom / cover;
 }
